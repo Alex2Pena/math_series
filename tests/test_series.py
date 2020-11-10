@@ -1,10 +1,12 @@
-from math_series.series_module import fibonacci, lucas
+from math_series.series_module import fibonacci, lucas, sum_series
 
-
+# import TESTS
 def test_import():
     assert fibonacci
     assert lucas
+    assert sum_series
 
+# fibonacci TESTS
 def test_fibonacci_0():
     actual = fibonacci(0)
     expected = 0
@@ -35,6 +37,7 @@ def test_fibonacci_negative():
     expected = None
     assert actual == expected
 
+# lucas TESTS
 def test_lucas_0():
     actual = lucas(0)
     expected = 2
@@ -65,3 +68,33 @@ def test_lucas_negative():
     expected = None
     assert actual == expected
 
+# sum_series TESTS
+def test_sum_series_0():
+    actual = sum_series(0)
+    expected = 0
+    assert actual == expected
+
+def test_sum_series_1_a_b():
+    actual = sum_series(1,22,42)
+    expected = 42
+    assert actual == expected
+
+def test_sum_series_2():
+    actual = sum_series(2,18,23)
+    expected = 41
+    assert actual == expected
+
+def test_sum_series_3():
+    actual = sum_series(3,6,3)
+    expected = 12
+    assert actual == expected
+
+def test_sum_series_4():
+    actual = sum_series(4,1,2)
+    expected = 8
+    assert actual == expected
+
+def test_sum_series_negative():
+    actual = sum_series(-13)
+    expected = None
+    assert actual == expected
